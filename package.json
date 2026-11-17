@@ -1,0 +1,14 @@
+{
+  "name": "raytracing",
+  "version": "0.1.0",
+  "description": "Ray caster maison en C++",
+  "scripts": {
+    "docker:build": "docker build -t raytracing .",
+    "build:release": "node scripts/run.js build:release",
+    "build:debug": "node scripts/run.js build:debug",
+    "start": "node scripts/run.js start",
+    "debug": "node scripts/run.js debug",
+    "test": "node scripts/run.js test",
+    "test:debug": "node scripts/run.js test:debug"
+  }
+}
