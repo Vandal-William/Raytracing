@@ -1,12 +1,12 @@
 const { spawnSync } = require("child_process");
 
 const commands = {
-  "build:release": "cmake -S . -B build/release -DCMAKE_BUILD_TYPE=Release && cmake --build build/release",
-  "build:debug": "cmake -S . -B build/debug -DCMAKE_BUILD_TYPE=Debug && cmake --build build/debug",
-  "start": "npm run build:release && ./build/release/raytracer",
-  "debug": "npm run build:debug && ./build/debug/raytracer",
-  "test": "npm run build:release && ctest --test-dir build/release --output-on-failure",
-  "test:debug": "npm run build:debug && ctest --test-dir build/debug --output-on-failure",
+  "build:release": "make build-release",
+  "build:debug": "make build-debug",
+  "start": "make start",
+  "debug": "make debug",
+  "test": "make test",
+  "test:debug": "make test-debug",
 };
 
 const name = process.argv[2];

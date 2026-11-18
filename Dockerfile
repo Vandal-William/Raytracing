@@ -5,7 +5,8 @@ RUN apk add --no-cache \
     cmake \
     bash \
     nodejs \
-    npm
+    npm \
+    git
 
 ENV RAYTRACING_IN_CONTAINER=1
 
