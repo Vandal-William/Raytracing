@@ -1,0 +1,20 @@
+#include <catch2/catch_test_macros.hpp>
+
+#include "render/camera.h"
+#include "test_helpers.h"
+
+TEST_CASE("a camera looks from its eye through the centre of its screen", "[camera]") {
+    Camera camera(Vector(0, 0, -1), Vector(0, 0, 0));
+    Ray ray = camera.rayThroughCentre();
+
+    requireVectorsEqual(ray.origin(), Vector(0, 0, -1));
+    requireVectorsEqual(ray.direction(), Vector(0, 0, 1));
+}
+
+TEST_CASE("the ray's direction is screen centre minus eye", "[camera]") {
+    Camera camera(Vector(1, 2, -1), Vector(4, 6, -1));
+    Ray ray = camera.rayThroughCentre();
+
+    requireVectorsEqual(ray.origin(), Vector(1, 2, -1));
+    requireVectorsEqual(ray.direction(), Vector(3, 4, 0));
+}

@@ -7,11 +7,16 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(Catch2)
 
 add_executable(raytracer_tests
+  test_helpers.cpp
   math/test_vector.cpp
-  ${CMAKE_SOURCE_DIR}/src/math/vector.cpp
+  colour/test_colour.cpp
+  geometry/test_ray.cpp
+  geometry/test_sphere.cpp
+  render/test_camera.cpp
+  render/test_trace.cpp
 )
-target_include_directories(raytracer_tests PRIVATE ${CMAKE_SOURCE_DIR}/src)
-target_link_libraries(raytracer_tests PRIVATE Catch2::Catch2WithMain)
+target_include_directories(raytracer_tests PRIVATE ${CMAKE_SOURCE_DIR}/tests)
+target_link_libraries(raytracer_tests PRIVATE raytracer_core Catch2::Catch2WithMain)
 
 list(APPEND CMAKE_MODULE_PATH "${catch2_SOURCE_DIR}/extras")
 include(Catch)
