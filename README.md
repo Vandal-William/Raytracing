@@ -41,15 +41,10 @@ Pas besoin d'entrer manuellement dans le conteneur : chaque commande ci-dessous 
 
 ### Sans npm (commandes CMake/CTest classiques)
 
-Entrer dans le conteneur :
-
 ```
+# Entrer dans le conteneur
 docker run --rm -it raytracing bash
-```
 
-Puis, dans le conteneur :
-
-```
 # Release
 cmake -S . -B build/release -DCMAKE_BUILD_TYPE=Release
 cmake --build build/release

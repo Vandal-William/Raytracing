@@ -19,8 +19,11 @@ target_include_directories(lodepng PUBLIC ${lodepng_SOURCE_DIR})
 add_library(raytracer_core
     src/math/vector.cpp
     src/colour/colour.cpp
+    src/material/material.cpp
     src/geometry/ray.cpp
     src/geometry/sphere.cpp
+    src/geometry/plane.cpp
+    src/scene/scene.cpp
     src/render/camera.cpp
     src/render/trace.cpp
     src/image/image.cpp
